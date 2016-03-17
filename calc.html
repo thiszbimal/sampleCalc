@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title></title>
+	<style>
+	.box{
+		border: 3px solid green;
+		height: 300px;
+		width: 300px;
+	}
+		</style>
+</head>
+<body>
+	<h1>Simple Calculator</h1>
+	<h2>Enter a number x:</h2>
+	<div id="div-input">
+		<input type="text" id="num-input" placeholder="Enter a number" onClick="this.setSelectionRange(0, this.value.length)">
+		<button type="button" id="square-btn">X^2</button> 
+		<button type="button" id="cube-btn">X^3</button>
+
+	</div>
+	<div>
+		<input type="text" id="box-output" readonly="readonly">
+	</div>
+	<div id="answer-block"></div>
+	<div id="myBox" class="box">
+	<script>
+	function getObj(key){
+		return document.getElementById(key);
+	}
+	var box = getObj("myBox");
+	var numInput = getObj("num-input");
+	var square = getObj("square-btn");
+	var cube = getObj("cube-btn");
+	var ans = getObj("answer-block");
+	var output = getObj("box-output");
+	box.style.display="block";
+	box.innerHTML="<span style='color:red'><h1>Welcome to Java Script</h1></span> ";
+	
+	 square.onclick=function(){
+	 	var content = numInput.value*numInput.value;
+	 	output.value=content;
+	 }
+
+	 cube.onclick=function(){
+	 	var content = numInput.value*numInput.value*numInput.value;
+	 	output.value=content;
+	 }
+	</script>
+</body>
+</html>
